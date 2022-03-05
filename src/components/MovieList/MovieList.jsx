@@ -13,24 +13,25 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const handleClick = (movie) => {
+        console.log('clicked a movie', movie)
+        history.push('/DetailsPage');
+        dispatch({type: 'SET_DETAILS', payload: movie})
+    }
+
     return (
         <main>
             <h1>MovieList</h1>
             <section className="movies">
                 {movies.map(movie => {
-                    const detailsPage = () =>{
-                        console.log('clicked a movie', movie.id)
-                        history.push('/DetailsPage');
-                    }
-                    
-                    
                     return (
-                        <div key={movie.id} onClick={detailsPage} >
+                        <div key={movie.id} onClick={() => handleClick(movie)} >
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}
+            
             </section>
         </main>
 
