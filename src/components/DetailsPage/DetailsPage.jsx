@@ -1,11 +1,15 @@
 import { useSelector } from 'react-redux';
+import {useHistory} from 'react-router-dom'
 
 function DetailsPage() {
-// // const handleClick = () => {
+const history = useHistory();
 
-// // }
+const handleClick = () => {
+    console.log('clicked back to movie list page');
+    history.push('/'); // sends user back to main movie list page
+}
 const movie = useSelector(store => store.details);
-const genre = useSelector(store => store.genres)
+const genre = useSelector(store => store.genres);
 
     return (
         <main>
@@ -19,7 +23,8 @@ const genre = useSelector(store => store.genres)
                     {genre.map(genre => (
                          <h4 key={genre.name}>  
                          {genre.name}</h4>   
-                    ))}          
+                    ))} 
+                    <button onClick={handleClick}>Back to Movie List Page</button>         
         </main> 
     )
  }
