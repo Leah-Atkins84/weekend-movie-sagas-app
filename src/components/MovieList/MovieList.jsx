@@ -17,6 +17,7 @@ function MovieList() {
         console.log('clicked a movie', movie)
         history.push('/DetailsPage');
         dispatch({type: 'SET_DETAILS', payload: movie})
+        dispatch({type: 'SET_GENRES', payload: movie.id})
     }
 
     return (
