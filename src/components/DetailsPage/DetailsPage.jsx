@@ -1,24 +1,27 @@
+import { useSelector } from 'react-redux';
+
 function DetailsPage() {
 // // const handleClick = () => {
 
 // // }
+const movie = useSelector(store => store.details);
 
     return (
-        <></>
-//     //     <main>
-//     //     <h1>Movie Details</h1>
-//     //     <section className="movies">
-//     //         {movies.map(movie => {
-//     //             return (
-//     //                 <div key={movie.id} onClick={() => handleClick(movie)} >
-//     //                     <h3>{movie.title}</h3>
-//     //                     <img src={movie.poster} alt={movie.title}/>
-//     //                 </div>
-//     //             );
-//     //         })}
+        <main>
+        <h1>Movie Details</h1>
+        <section>
+           
+               
+                    <div key={movie.id}>
+                        <h3>{movie.title}</h3>
+                        <img src={movie.poster} alt={movie.title}/>
+                        <p>{movie.description}</p>
+                    </div>
+            
         
-//     //     </section>
-//     //
+        </section>
+        </main>
+    
     )
  }
 
