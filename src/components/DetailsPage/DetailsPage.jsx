@@ -42,12 +42,14 @@ const genre = useSelector(store => store.genres);
                         <p>{movie.description}</p>
                         </Card>
                     </div>
+                    <Card>
                     <h3>Genres: </h3>    {/* Mapping over genre array to display all the genres for the selected movie */}
 
                     {genre.map(genre => (
                          <h4 key={genre.name}>  
                          {genre.name}</h4>   
                     ))} 
+                    </Card>
                    
                     <Button variant="contained" size="large" color="secondary" onClick={handleClick}>Back to Movie List Page</Button> 
                     </ThemeProvider>        

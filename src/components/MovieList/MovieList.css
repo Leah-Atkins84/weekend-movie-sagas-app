@@ -2,3 +2,16 @@
     display : flex;
     flex-wrap: wrap;
 }
+
+header{
+    height: 50%;
+   
+    background-color: rgb(248, 233, 167);
+    text-align: center;
+  }
+
+body{
+    background-image: url('https://thumbs.dreamstime.com/z/seamless-vector-popcorn-background-37608692.jpg'); 
+}
+
+
