@@ -30,7 +30,8 @@ const genre = useSelector(store => store.genres);
 // movie details page lists movie description, name, image and genres
     return (
         <>
-          <header color="primary">       
+         <ThemeProvider theme={theme}>
+          <header>       
            <h2>Movie Details</h2>  
            <h2>{movie.title}</h2>
            </header> 
@@ -39,11 +40,12 @@ const genre = useSelector(store => store.genres);
                         <p>{movie.description}</p>
                     </div>
                     <h3>Genres: </h3> 
+
                     {genre.map(genre => (
                          <h4 key={genre.name}>  
                          {genre.name}</h4>   
                     ))}
-                       <ThemeProvider theme={theme}>
+                      
                     <Button variant="contained" size="large" color="secondary" onClick={handleClick}>Back to Movie List Page</Button> 
                     </ThemeProvider>        
         </> 

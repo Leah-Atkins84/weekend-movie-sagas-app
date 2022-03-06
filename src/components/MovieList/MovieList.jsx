@@ -4,6 +4,7 @@ import './MovieList.css'
 import { useHistory } from 'react-router-dom'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 
 
 function MovieList() {
@@ -27,14 +28,27 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <section className="movies">
+              
+             
                 {movies.map(movie => {
                     return (
+                  
                         <div key={movie.id} onClick={() => handleClick(movie)} >
+                                 <Card >
+                            <CardContent >
+                            {/* <CardActions > */}
                             <h3>{movie.title}</h3>
+                       
                             <img src={movie.poster} alt={movie.title}/>
+                            {/* </CardActions> */}
+                            </CardContent>
+                        </Card>
                         </div>
+                  
                     );
                 })}
+              
+                
             
             </section>
         </main>
