@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import { useHistory } from 'react-router-dom'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+
 
 function MovieList() {
 
