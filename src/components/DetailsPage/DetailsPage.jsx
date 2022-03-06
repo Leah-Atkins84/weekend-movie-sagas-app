@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
+//import '@fontsource/roboto/300.css';
+import Button from '@material-ui/core/Button';
 
 function DetailsPage() {
 const history = useHistory();
@@ -25,7 +27,7 @@ const genre = useSelector(store => store.genres);
                          <h4 key={genre.name}>  
                          {genre.name}</h4>   
                     ))}
-                    <button onClick={handleClick}>Back to Movie List Page</button>         
+                    <Button variant="contained" onClick={handleClick}>Back to Movie List Page</Button>         
         </main> 
     )
  }// end DetailsPage
