@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
-//import '@fontsource/roboto/300.css';
+
+//-----------------------MUI imports------------------------------
 import Button from '@material-ui/core/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { teal } from '@mui/material/colors';
-import { Typography } from '@mui/material';
+import Card from '@mui/material/Card';
 
 const theme = createTheme({
   palette: {
@@ -16,7 +17,7 @@ const theme = createTheme({
     },
   },
 });
-
+//--------------------------------------------------------------
 function DetailsPage() {
 const history = useHistory();
 
@@ -37,15 +38,17 @@ const genre = useSelector(store => store.genres);
            </header> 
                     <div key={movie.id}>
                         <img src={movie.poster} alt={movie.title}/>
+                        <Card>
                         <p>{movie.description}</p>
+                        </Card>
                     </div>
-                    <h3>Genres: </h3> 
+                    <h3>Genres: </h3>    {/* Mapping over genre array to display all the genres for the selected movie */}
 
                     {genre.map(genre => (
                          <h4 key={genre.name}>  
                          {genre.name}</h4>   
-                    ))}
-                      
+                    ))} 
+                   
                     <Button variant="contained" size="large" color="secondary" onClick={handleClick}>Back to Movie List Page</Button> 
                     </ThemeProvider>        
         </> 
