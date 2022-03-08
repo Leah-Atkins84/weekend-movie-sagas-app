@@ -44,7 +44,7 @@ const genre = useSelector(store => store.genres);
                         </Card>
                     </div>
                     <br></br>
-                    <Card>
+                    <Card sx={{ maxWidth: 345 }}>
                     <h3>Genres: </h3>    {/* Maps over genre array to display all the genres for the selected movie */}
 
                     {genre.map(genre => (

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 //-----------------MUI imports-------------------------
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
 
 
 function MovieList() {
@@ -31,20 +32,24 @@ function MovieList() {
             </header>
             <body>
             <section className="movies">
+                <Grid container={{xs: 2, md: 3 }}
+                gap={2}>
                 {/* // Displays all the movies from the database// */}
                 {movies.map(movie => {
                     return (
                   // when movie clicked, brings user to the details page
                         <div key={movie.id} onClick={() => handleClick(movie)} >
-                         <Card >
-                            <CardContent >
+                         <Grid>
+                            <Card>
                             <h3>{movie.title}</h3>
                             <img src={movie.poster} alt={movie.title}/>
-                            </CardContent>
-                        </Card>
+                            </Card>
+                        </Grid>
                         </div>
+                     
                     );
                 })}
+                   </Grid>
             </section>
             </body>
         </main>
