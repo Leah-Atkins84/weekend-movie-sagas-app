@@ -3,6 +3,7 @@
 
 ## Description
 I created a movie app that connects to a database of movies. When the user selects a movie they are taken to another details view page that displays the movie description, image, and all of the genres that the selected movie is apart of. The user can go back to the main movie list when they click the button on the movie details page.
+![MovieSagas](https://user-images.githubusercontent.com/91297137/161461644-d5df0981-db2e-49ad-8fd0-df04bfcc8329.png)
 
 
 ## Built With
